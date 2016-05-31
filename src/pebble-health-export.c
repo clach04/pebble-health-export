@@ -466,8 +466,10 @@ handle_received_tuple(Tuple *tuple) {
 		break;
 
 	    case MSG_KEY_UPLOAD_START:
-		web.first_key = tuple_uint(tuple);
-		web.start_time = time(0);
+		if (!web.first_key) {
+			web.first_key = tuple_uint(tuple);
+			web.start_time = time(0);
+		}
 		break;
 
 	    case MSG_KEY_UPLOAD_FAILED:
