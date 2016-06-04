@@ -19,7 +19,7 @@ with the smallest battery.
 
 To use this watchapp, you need a webserver to receive the POST request
 sent the watchapp. The append server in my
-[Simple Web Applicaitons (in Ada)][webapps] was the reference used when
+[Simple Web Applications (in Ada)][webapps] was the reference used when
 developing this watchapp, but any webapp that can work with a POSTed HTML
 form should work, and the actual HTML from doesn't even need to exist.
 
@@ -45,7 +45,7 @@ format,
   minute (9915 here is a lot, my desk activity is a few thousands,
   light sleep or watching TV is a few hundreds, and it goes down to
   zero during deep sleep)
-- **ambieent light level**, from 1 (darkest) to 4 (brightest) with 0
+- **ambient light level**, from 1 (darkest) to 4 (brightest) with 0
   meaning unknown
 - **activity mask**, currently 3 for deep sleep, 1 for non-deep sleep or 0
   for not sleeping.
@@ -76,7 +76,7 @@ itself, so it can improve throughput to bundle several line in a single
 POST request.
 
 If your receiving webapp supports this, you can configure bundling lines,
-with a percent-encoded separator of your choice. For example, %0d%0a might
+with a percent-encoded separator of your choice. For example, `%0d%0a` might
 be good for a webapp like my Append Server that appends the POSTed field
 directly to a text file.
 
@@ -96,7 +96,7 @@ and the watchapp javascript engine doesn't do well with cookies. In order
 to strengthen the authentication, my Append Server uses HMAC authentication
 of data lines.
 
-The watchapps can be configured to provide a signature on a the given form
+The watchapps can be configured to provide a signature on the given form
 field, with the usual HMAC-SHA\* algorthm, and can encode the signature in
 hexadecimal or base-64 or send it unencoded.
 
