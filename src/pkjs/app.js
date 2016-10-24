@@ -31,7 +31,7 @@ var to_send = [];
 var senders = [new XMLHttpRequest(), new XMLHttpRequest()];
 var i_sender = 1;
 var bundle_size = 0;
-var jsSHA = require("sha");
+var jsSHA = require("sha.js");
 
 function sendPayload(payload) {
    var data = new FormData();
